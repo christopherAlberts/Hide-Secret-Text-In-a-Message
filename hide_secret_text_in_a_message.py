@@ -4,12 +4,15 @@ import requests
 def hide_secret_text_in_a_message():
     while True:
 
-        encodeOrDecoded = input("Encode or Decode (Or 'X' to exit.): ")
+        print("Encode or Decode (Or 'X' to exit.): ")
+        encodeOrDecoded = input()
 
         if encodeOrDecoded == "Encode" or encodeOrDecoded == "encode" or encodeOrDecoded == "E" or encodeOrDecoded == "e":
 
-            hiddenPhrase = input("Enter hidden phrase: ")
-            publicPhrase = input("Enter public phrase: ")
+            print("Enter hidden phrase: ")
+            hiddenPhrase = input()
+            print("Enter public phrase: ")
+            publicPhrase = input()
 
             hiddenPhrase = hiddenPhrase.replace(' ', '+')
             publicPhrase = publicPhrase.replace(' ', '+')
@@ -27,7 +30,8 @@ def hide_secret_text_in_a_message():
 
         elif encodeOrDecoded == "Decode" or encodeOrDecoded == "decode" or encodeOrDecoded == "D" or encodeOrDecoded == "d":
 
-            decodePhrase = input("Enter phrase to decode: ")
+            print("Enter phrase to decode: ")
+            decodePhrase = input()
             result2 = requests.get('https://neatnik.net/steganographr/api?decode=' + decodePhrase)
 
             print("Here is your decrypted message:")
